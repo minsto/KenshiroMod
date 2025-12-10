@@ -1,0 +1,32 @@
+{
+  "kenshirocharge": {
+    "sounds": [
+      { "name": "kenshiromod:kenshirocharge" }
+    ]
+  },
+  "kenshirostyle": {
+    "sounds": [
+      { "name": "kenshiromod:kenshirostyle" }
+    ]
+  },
+  "kenshiroshindeiru": {
+    "sounds": [
+      { "name": "kenshiromod:kenshiroshindeiru" }
+    ]
+  },
+  "kenshiroheartbeat": {
+    "sounds": [
+      { "name": "kenshiromod:kenshiroheartbeat" }
+    ]
+  },
+  "kenshiropunch": {
+    "sounds": [
+      { "name": "kenshiromod:kenshiropunch" }
+    ]
+  },
+  "kenshirosmash": {
+    "sounds": [
+      { "name": "kenshiromod:kenshirosmash" }
+    ]
+  }
+}

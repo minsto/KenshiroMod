@@ -1,13 +1,13 @@
 {
-  "itemGroup.kenshiromod": "Example Mod Tab",
-  "block.kenshiromod.example_block": "Example Block",
-  "item.kenshiromod.example_item": "Example Item",
-
   "kenshiromod.configuration.title": "KenshiroMod Configs",
-  "kenshiromod.configuration.section.kenshiromod.common.toml": "KenshiroMod Configs",
-  "kenshiromod.configuration.section.kenshiromod.common.toml.title": "KenshiroMod Configs",
-  "kenshiromod.configuration.items": "Item List",
-  "kenshiromod.configuration.logDirtBlock": "Log Dirt Block",
-  "kenshiromod.configuration.magicNumberIntroduction": "Magic Number Text",
-  "kenshiromod.configuration.magicNumber": "Magic Number"
+  "kenshiromod.configuration.section.kenshiromod.toml": "KenshiroMod Configs",
+  "kenshiromod.configuration.section.kenshiromod.toml.title": "KenshiroMod Configs",
+  "kenshiromod.configuration.combat": "KenshiroMod Battle Configs",
+  "kenshiromod.configuration.enableKenshiroPunch": "Enable Kenshiro Punch",
+  "kenshiromod.configuration.KenshiroBaseDamage": "Kenshiro Base Damage",
+  "kenshiromod.configuration.enableAura": "Kenshiro Aura",
+  "key.category.kenshiromod.key_category": "Kenshiro Mod",
+  "key.kenshiromod.technique": "Kenshiro Technique",
+  "key.kenshiromod.smash": "Kenshiro Smash"
 }
+
