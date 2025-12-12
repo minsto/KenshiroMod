@@ -14,6 +14,7 @@ public class KenshiroKeyMappings {
 
     public static KeyMapping TECHNIQUE_KEY;
     public static KeyMapping SMASH_KEY;
+    public static KeyMapping KICK_KEY;
 
     // ID de la catégorie
     public static final ResourceLocation KEY_CATEGORY_ID =
@@ -39,5 +40,15 @@ public class KenshiroKeyMappings {
                 KEY_CATEGORY       // ✅ on réutilise la même catégorie
         );
         event.register(SMASH_KEY);
+
+
+        KICK_KEY = new KeyMapping(
+                "key.kenshiromod.kick",
+                GLFW.GLFW_KEY_K,
+                KEY_CATEGORY       // ✅ on réutilise la même catégorie
+        );
+        event.register(KICK_KEY);
+
     }
+
 }

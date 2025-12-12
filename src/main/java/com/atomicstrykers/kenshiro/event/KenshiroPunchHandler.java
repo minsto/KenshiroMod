@@ -3,6 +3,7 @@ package com.atomicstrykers.kenshiro.event;
 
 
 import com.atomicstrykers.kenshiro.Config.KenshiroClientEvents;
+import com.atomicstrykers.kenshiro.Config.KenshiroConfig;
 import com.atomicstrykers.kenshiro.registry.KenshiroSounds;
 import net.minecraft.client.Minecraft;
 import net.minecraft.server.level.ServerLevel;
@@ -55,7 +56,7 @@ public class KenshiroPunchHandler {
 
         doPunch(serverPlayer, target);
     }
-    private static void startPunch(Minecraft mc) {
+    public static void startPunch(Minecraft mc) {
 
         if (mc.player != null) {
             mc.player.playSound(KenshiroSounds.KENSHIRO_PUNCH.value(), 1.0F, 1.0F);
@@ -72,12 +73,20 @@ public class KenshiroPunchHandler {
         Minecraft mc = Minecraft.getInstance();
         if (mc.player == null) return;
         DamageSource src = player.damageSources().playerAttack(player);
+        if (!KenshiroConfig.ENABLE_KENSHIRO_PUNCH.get()) return;
 
+        int dmg = KenshiroConfig.KENSHIRO_BASE_DAMAGE.get();
+
+
+            dmg += 3;
+          if (KenshiroConfig.ENABLE_AURA.get()) {
+            dmg += 2;
+        }
         // On regarde la vie AVANT
         float before = target.getHealth();
 
         // 3 de dégâts
-        target.hurt(src, 3.0F);
+        target.hurt(src, dmg);
 
         // Si la vie n'a pas bougé → pas de hit
         boolean damaged = target.getHealth() < before;

@@ -4,6 +4,7 @@ import com.atomicstrykers.kenshiro.Config.KenshiroConfig;
 import com.atomicstrykers.kenshiro.KenshiroMod;
 
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -40,6 +41,8 @@ import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
+
+import static com.atomicstrykers.kenshiro.event.KenshiroPunchHandler.startPunch;
 
 @EventBusSubscriber(modid = KenshiroMod.MOD_ID)
 public class KenshiroCommonEvents {
@@ -91,6 +94,8 @@ public class KenshiroCommonEvents {
     // Coups sur entités (mobs/joueurs)
     @SubscribeEvent
     public static void onPlayerAttack(AttackEntityEvent event) {
+        Minecraft mc = Minecraft.getInstance();
+        if (mc.player == null) return;
         if (!(event.getEntity() instanceof Player player)) return;
         if (!(event.getTarget() instanceof LivingEntity target)) return;
 
@@ -101,6 +106,7 @@ public class KenshiroCommonEvents {
         int dmg = KenshiroConfig.KENSHIRO_BASE_DAMAGE.get();
 
         if (isTechniqueActive(player)) {
+            startPunch(mc);
             dmg += 6;
         } else if (KenshiroConfig.ENABLE_AURA.get()) {
             dmg += 2;
@@ -147,11 +153,11 @@ public class KenshiroCommonEvents {
             level.sendParticles(ParticleTypes.FLAME, x, y, z, 1, 0, 0.02, 0, 0);
         }
 
-        boolean success = sp.gameMode.destroyBlock(pos);
-        if (success) {
-            KenshiroMod.LOGGER.debug("KenshiroStyle casse (clic) le bloc {} à {}.",
-                    level.getBlockState(pos), pos);
-        }
+       // boolean success = sp.gameMode.destroyBlock(pos);
+       // if (success) {
+         //   KenshiroMod.LOGGER.debug("KenshiroStyle casse (clic) le bloc {} à {}.",
+           //         level.getBlockState(pos), pos);
+        //}
 
         event.setCanceled(true);
     }
@@ -183,10 +189,10 @@ public class KenshiroCommonEvents {
             level.sendParticles(ParticleTypes.FLAME, x, y, z, 1, 0, 0.02, 0, 0);
         }
 
-        boolean success = sp.gameMode.destroyBlock(pos);
-        if (success) {
-            KenshiroMod.LOGGER.debug("KenshiroStyle casse AUTO le bloc {} à {}.",
-                    level.getBlockState(pos), pos);
-        }
+      //  boolean success = sp.gameMode.destroyBlock(pos);
+        //if (success) {
+          //  KenshiroMod.LOGGER.debug("KenshiroStyle casse AUTO le bloc {} à {}.",
+            //        level.getBlockState(pos), pos);
+        //}
     }
 }

@@ -26,7 +26,16 @@ public class KenshiroNetwork {
                 KenshiroSmashPacket.STREAM_CODEC,
                 KenshiroSmashPacket::handle
         );
-
+        registrar.playToServer(
+                KenshiroKickPacket.TYPE,
+                KenshiroKickPacket.STREAM_CODEC,
+                KenshiroKickPacket::handle
+        );
+        registrar.playToServer(
+                KenshiroMinePacket.TYPE,
+                KenshiroMinePacket.STREAM_CODEC, // même pattern que pour Smash/Technique
+                KenshiroMinePacket::handle
+        );
 
     }
 

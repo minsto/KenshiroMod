@@ -10,6 +10,8 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.entity.ai.attributes.AttributeInstance;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.entity.LivingEntity;
@@ -145,6 +147,8 @@ public class KenshiroSmashHandler {
 
         if (count >= HEARTBEAT_EVERY) {
             tag.putInt(NBT_SMASH_COUNT, 0);
+            AttributeInstance maxHealth = player.getAttribute(Attributes.MAX_HEALTH);
+            maxHealth.setBaseValue(18.0);
             startHeartbeat(mc);
         }
 
