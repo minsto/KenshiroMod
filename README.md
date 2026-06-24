@@ -1,4 +1,4 @@
-Branche 1.21.1 is new version for neoforge 1,21.1
+Branche 1.21.1 is new version for neoforge 1,21.10
 Use Branche for this
 Main is 1.7.10 old version
 ## Build / Compilation
@@ -8,8 +8,8 @@ This mod is made for Minecraft NeoForge.
 ### Requirements
 
 - Java 21
-- Minecraft 1.21.1
-- NeoForge 1.21.1
+- Minecraft 1.21.10
+- NeoForge 1.21.10
 - Gradle / Gradle Wrapper included in the project
 
 ### How to build
