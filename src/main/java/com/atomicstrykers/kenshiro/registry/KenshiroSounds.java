@@ -42,6 +42,7 @@ public class KenshiroSounds {
             SOUNDS.register("kenshiropunch",
                     () -> SoundEvent.createVariableRangeEvent(
                             ResourceLocation.fromNamespaceAndPath(KenshiroMod.MOD_ID, "kenshiropunch")
+
                     ));
     public static final DeferredHolder<SoundEvent, SoundEvent> KENSHIRO_SMASH =
             SOUNDS.register("kenshirosmash",

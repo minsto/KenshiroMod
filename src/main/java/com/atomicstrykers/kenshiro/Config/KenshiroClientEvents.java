@@ -33,7 +33,7 @@ import static net.minecraft.world.level.block.SculkSensorBlock.COOLDOWN_TICKS;
 @EventBusSubscriber(modid = KenshiroMod.MOD_ID, value = Dist.CLIENT)
 public class KenshiroClientEvents {
     public static boolean styleActive = false;
-    private static final int COOLDOWN_TICKS = 5 * 20; // 5 secondes
+    private static final int COOLDOWN_TICKS = 2 * 20; // 5 secondes
     private static int lastTechniqueEndTick = -COOLDOWN_TICKS;
     private static void mineTargetedBlock(LocalPlayer player) {
         Minecraft mc = Minecraft.getInstance();
@@ -143,7 +143,7 @@ public class KenshiroClientEvents {
                     mc.player.setHealth(newHp);
 
                     // petit son de hurt vanilla (optionnel)
-                    mc.player.playSound(net.minecraft.sounds.SoundEvents.PLAYER_HURT, 1.0F, 1.0F);
+                   // mc.player.playSound(net.minecraft.sounds.SoundEvents.PLAYER_HURT, 1.0F, 1.0F);
                     continue;
                 }
 
